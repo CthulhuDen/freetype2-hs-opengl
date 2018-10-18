@@ -1,0 +1,13 @@
+resolver:
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/12/13.yaml
+
+packages:
+- .
+
+extra-deps:
+- derive-storable-0.1.2.0
+- bitmap-0.0.2
+- hpp-0.6.1
+- GLUtil-0.10.2
+- git: https://github.com/CthulhuDen/freetype2-hs.git
+  commit: 1d825a7cde40d1ea833fd67dd452b83ff7cc7a97

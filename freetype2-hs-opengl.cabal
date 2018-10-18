@@ -1,0 +1,64 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.30.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 7fb0323f1b1f5d15916f9b0fe10373250ddac6907147042ce44f0d5e72ba2646
+
+name:           freetype2-hs-opengl
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/CthulhuDen/freetype2-hs-opengl#readme>
+category:       Graphics
+homepage:       https://github.com/CthulhuDen/freetype2-hs-opengl#readme
+bug-reports:    https://github.com/CthulhuDen/freetype2-hs-opengl/issues
+author:         Cthulhu
+maintainer:     cthulhu.den@gmail.com
+copyright:      Cthulhu (c) 2018
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/CthulhuDen/freetype2-hs-opengl
+
+library
+  exposed-modules:
+      Graphics.Rendering.FreeType.OpenGL
+  other-modules:
+      Graphics.Bitmap.Atlas
+      Linear.Storable
+      Paths_freetype2_hs_opengl
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -O2
+  build-depends:
+      GLUtil
+    , OpenGL
+    , OpenGLRaw
+    , base >=4.7 && <5
+    , bitmap
+    , derive-storable
+    , file-embed
+    , freetype2-hs >=0.1.2.1
+    , linear
+    , unordered-containers
+    , vector
+  default-language: Haskell2010
+
+test-suite freetype2-hs-opengl-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_freetype2_hs_opengl
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , freetype2-hs-opengl
+  default-language: Haskell2010

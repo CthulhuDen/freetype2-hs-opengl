@@ -1,0 +1,48 @@
+name:                freetype2-hs-opengl
+version:             0.1.0.0
+github:              "CthulhuDen/freetype2-hs-opengl"
+license:             BSD3
+author:              "Cthulhu"
+maintainer:          "cthulhu.den@gmail.com"
+copyright:           "Cthulhu (c) 2018"
+category:            Graphics
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description:         Please see the README on GitHub at <https://github.com/CthulhuDen/freetype2-hs-opengl#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+ghc-options:
+- -Wall
+- -O2
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Graphics.Rendering.FreeType.OpenGL
+  dependencies:
+  - OpenGL
+  - OpenGLRaw
+  - freetype2-hs >= 0.1.2.1
+  - bitmap
+  - file-embed
+  - unordered-containers
+  - vector
+  - derive-storable
+  - linear
+  - GLUtil
+
+tests:
+  freetype2-hs-opengl-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - freetype2-hs-opengl
